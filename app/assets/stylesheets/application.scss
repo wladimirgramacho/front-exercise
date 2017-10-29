@@ -1,6 +1,9 @@
 /*
-	Import SCSS files here.
- 	Custom bootstrap variables must be set or imported *before* bootstrap.
+ Import SCSS files here.
+ Custom bootstrap variables must be set or imported *before* bootstrap.
+ *= require_self
  */
 
 @import "bootstrap";
+@import "home";
+@import "normalize";
