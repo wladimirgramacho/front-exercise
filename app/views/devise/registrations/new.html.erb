@@ -6,8 +6,13 @@
       <%= devise_error_messages! %>
 
       <div class="field">
+        <%= f.label :name, class: "sign-label" %><br />
+        <%= f.text_field :name, autofocus: true, class: "sign-input" %>
+      </div>
+
+      <div class="field">
         <%= f.label :email, class: "sign-label" %><br />
-        <%= f.email_field :email, autofocus: true, class: "sign-input" %>
+        <%= f.email_field :email, class: "sign-input" %>
       </div>
 
       <div class="field">
