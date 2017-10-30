@@ -1,0 +1,18 @@
+<section>
+	<h4>
+	  Bem-vindo(a)
+	  <%= current_user.name %>
+	</h4>
+
+	<br>
+
+
+	<% @transactions.each do |transaction| %>
+		<%= transaction.coin.name %>
+		<%= transaction.coin.price %>
+		<%= transaction.quantity %>
+		<br>
+	<% end %>
+
+	
+</section>
