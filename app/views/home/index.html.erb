@@ -6,7 +6,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-nav ml-auto" id="navbarResponsive">
-      <button type="button" class="btn btn-BB"><%= icon('lock', class: 'mr-2') %> Acesse sua conta</button>
+      <%= link_to new_user_registration_path do %>
+        <button type="button" class="btn btn-BB"><%= icon('lock', class: 'mr-2') %> Acesse sua conta</button>
+      <% end %>
     </div>
   </div>
 </nav>
@@ -16,7 +18,7 @@
     <h1 class="display-3c"><strong>Invista em Crypto Moedas</strong></h1>
     <p class="lead">O Banco do Brasil agora permite que você invista em Crypto Moedas com facilidade e segurança.</p>
     <div class="d-flex justify-content-end">
-      <a class="btn btn-BB" href="#" role="button">Saiba mais</a>
+      <%= link_to "Saiba mais", new_user_registration_path, class: "btn btn-BB" %>
     </div>
   </div>
 </section>

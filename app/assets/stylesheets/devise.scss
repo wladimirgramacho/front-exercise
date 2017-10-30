@@ -1,0 +1,28 @@
+#section-registration {
+	background-color: #F6F6F6;
+	height: 100%;
+}
+
+.sign-up {
+	@extend .d-flex;
+	@extend .flex-column;
+	@extend .justify-content-center;
+	@extend .col-3;
+	@extend .p-3;
+
+	border-radius: 0.4em;
+	background-color: #fafafa;
+    border: 0.01em solid #c0c0c0;
+
+    .sign-label {
+    	@extend .mb-0;
+    	@extend .mt-2;
+    	
+    	font-weight: bold;
+    }
+
+    .sign-input {
+    	border: solid 1px #adadad;
+    	border-radius: 3px;
+    }
+}
