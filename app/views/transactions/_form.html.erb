@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :coin_id %>
-    <%= form.select :coin_id, options_from_collection_for_select(@coins, 
-        :id, :name ) %>
+    <%= collection_select('', :coin_id, @coins, :id, :name, prompt: true) %>
+    <p class="chosen-coin-price display-price"></p>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label :quantity %>
     <%= form.text_field :price, id: :transaction_price %>
   </div>
 
