@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-BB">
   <div class="container">
-    <img title="Banco do Brasil" alt="Banco do Brasil" src="http://www.bb.com.br/pbb/img.ImgWriter?codigo=40846&origem=CCI">
-    <h3 class="navbar-brand ml-3 mb-0 BB-primary">Crypto BB</h3>
+    
+    <%= link_to @home_path, class:"no-decoration" do %>
+      <img title="Banco do Brasil" alt="Banco do Brasil" src="http://www.bb.com.br/pbb/img.ImgWriter?codigo=40846&origem=CCI">
+      <h3 class="navbar-brand ml-3 mb-0 BB-primary">Crypto BB</h3>
+    <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
