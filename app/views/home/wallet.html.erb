@@ -10,6 +10,7 @@
 	<% @wallet.each do |coin, total| %>
 		<%= coin %>
 		<%= total %>
+		<%= link_to "Vender", transactions_sell_path(coin, total) %>
 		<br>
 	<% end %>
 

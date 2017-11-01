@@ -10,8 +10,7 @@ class HomeController < ApplicationController
     @wallet = {}
 
     coins.each do |coin|
-      var = @transactions.select{ |t| t.coin == coin}
-      total = var.reduce(0){|sum, t| sum + t.quantity}
+      total = @transactions.select{ |t| t.coin == coin}.reduce(0){|sum, t| sum + t.quantity}
       @wallet[coin.name] = total
     end
 
