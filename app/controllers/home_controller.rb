@@ -5,6 +5,6 @@ class HomeController < ApplicationController
 	end
 
   def wallet
-    @wallet = current_user.transactions.group(:coin_id).order("sum_quantity DESC").sum(:quantity)
+    @wallet = current_user.wallet
   end
 end

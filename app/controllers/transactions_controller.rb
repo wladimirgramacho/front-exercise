@@ -22,7 +22,7 @@ class TransactionsController < ApplicationController
   def sell
     @transaction = Transaction.new
     @coin = Coin.find(params[:coin_id])
-    @max = current_user.transactions.where(coin_id: @coin.id).sum(:quantity)
+    @max = current_user.wallet[@coin.id]
   end
 
   def subtract_transaction
