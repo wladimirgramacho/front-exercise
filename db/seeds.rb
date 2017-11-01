@@ -13,6 +13,6 @@ Coin.destroy_all
 wladi = User.create(name: 'Wladimir', email: 'wladimirgramacho@gmail.com', password: '123456')
 fabs = User.create(name: 'Fabs', email: 'fabs@gmail.com', password: '123456')
 
-bitcoin = Coin.create(name: 'Bitcoin', price: '2048.32');
-billycoin = Coin.create(name: 'Billycoin', price: '9999.99');
+bitcoin = Coin.create(name: 'Bitcoin', price: '512.32');
+billycoin = Coin.create(name: 'Billycoin', price: '999.99');
 kryptocoin = Coin.create(name: 'Kryptocoin', price: '213.21');
