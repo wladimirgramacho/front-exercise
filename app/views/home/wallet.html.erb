@@ -7,10 +7,9 @@
 	<br>
 
 
-	<% @transactions.each do |transaction| %>
-		<%= transaction.coin.name %>
-		<%= transaction.coin.price %>
-		<%= transaction.quantity %>
+	<% @wallet.each do |coin, total| %>
+		<%= coin %>
+		<%= total %>
 		<br>
 	<% end %>
 
