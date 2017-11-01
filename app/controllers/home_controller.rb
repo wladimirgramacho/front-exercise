@@ -14,5 +14,7 @@ class HomeController < ApplicationController
       total = var.reduce(0){|sum, t| sum + t.quantity}
       @wallet[coin.name] = total
     end
+
+    @wallet = @wallet.sort_by{ |coin, total| coin}
   end
 end
