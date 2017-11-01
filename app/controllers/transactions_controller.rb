@@ -18,14 +18,6 @@ class TransactionsController < ApplicationController
     end
   end
 
-  def get_price
-    if params[:transaction].present?
-      @coin = Coin.find(params[:transaction])
-      @data = Hash.new 
-      @data["coin_price"] = @coin.price
-      render json: @data and return false 
-    end 
-  end
 
   private
     def transaction_params
