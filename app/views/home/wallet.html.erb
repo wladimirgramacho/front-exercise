@@ -1,18 +1,31 @@
-<section>
-	<h4>
-	  Bem-vindo(a)
-	  <%= current_user.name %>
-	</h4>
+<main class="main-center">
+	<section class="wallet-card">
+		<h4>
+		  Minha Carteira
+		</h4>
 
-	<br>
-
-
-	<% @wallet.each do |coin_id, total| %>
-		<%= Coin.find(coin_id).name %>
-		<%= total %>
-		<%= link_to "Vender", transactions_sell_path(coin_id) %>
 		<br>
-	<% end %>
 
-	<%= link_to 'Comprar moedas', transactions_new_path %>
-</section>
+		<table class="wallet-table">
+			<thead class="thead-inverse">
+				<tr>
+					<th class="col-7">Moeda</th>
+					<th class="col-4">Quantidade</th>
+					<th class="col-1">Vender</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @wallet.each do |coin_id, total| %>
+					<tr>
+						<td><%= Coin.find(coin_id).name %></td>
+						<td><%= total %></td>
+						<td><%= link_to icon('btc'), transactions_sell_path(coin_id) %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+
+		<%= link_to 'Comprar moedas', transactions_new_path, class: "btn btn-BB" %>
+	</section>
+</main>

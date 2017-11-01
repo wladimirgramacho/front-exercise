@@ -1,0 +1,26 @@
+.main-center {
+	@extend .d-flex;
+	@extend .justify-content-center;
+
+
+	.wallet-card {
+		@extend .card;
+		@extend .col-6;
+		@extend .p-3;
+
+		margin-top: 5em;
+	}
+
+	.wallet-table {
+		@extend .table;
+		@extend .table-bordered;
+
+		margin-top: 0.5em;
+		margin-bottom: 1.5em;
+	}
+}
+
+.thead-inverse {
+	color: #fff;
+	background-color: #292b2c;
+}
