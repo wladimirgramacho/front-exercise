@@ -12,9 +12,8 @@ document.addEventListener("turbolinks:load", function() {
 
   $("#transaction-quantity").on("input", function() {
   	quantity = $("#transaction-quantity").val();
-  	var value = quantity*price;
+  	var value = (quantity*price).toFixed(2);
 
-  	console.log(value);
   	if (isNaN(value)) {
   		$("#transaction-value").text('');
   	}
