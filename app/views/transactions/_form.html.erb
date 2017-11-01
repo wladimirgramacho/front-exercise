@@ -23,7 +23,7 @@
 
   <div class="field col-2">
     <%= form.label :quantidade %>
-    <%= form.number_field :quantity, :step => 0.01, id: "transaction-quantity"  %>
+    <%= form.number_field :quantity, step: 0.01, min: 0, id: "transaction-quantity"  %>
   </div>
 
   <div class="field col-2">
