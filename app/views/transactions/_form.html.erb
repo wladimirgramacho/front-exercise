@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :coin_id %>
-    <%= form.select :coin_id, options_for_select(@coins.map {|coin| [coin.name, coin.name, {'data-value' => coin.price}] }), {prompt: true}, {id: 'coin-value'} %>
+    <%= form.select :coin_id, options_for_select(@coins.map {|coin| [coin.name, coin.id, {'data-value' => coin.price}] }), {prompt: true}, {id: 'coin-value'} %>
     <p id="coin-price" class=""></p>
   </div>
 
@@ -27,6 +27,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit id: "submit-form" %>
   </div>
 <% end %>

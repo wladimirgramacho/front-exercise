@@ -6,12 +6,14 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(transaction_params)
+    @transaction.user = current_user
 
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to @transaction, notice: 'transaction was successfully created.' }
+        format.html { redirect_to wallet_url, notice: 'transaction was successfully created.' }
         format.json { render :show, status: :created, location: @transaction }
       else
+        @coins = Coin.all
         format.html { render :new }
         format.json { render json: @transaction.errors, status: :unprocessable_entity }
       end
