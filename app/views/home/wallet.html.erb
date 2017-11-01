@@ -18,7 +18,7 @@
 			<tbody>
 				<% @wallet.each do |coin_id, total| %>
 					<tr>
-						<td><%= Coin.find(coin_id).name %></td>
+						<td class="small-uppercase"><%= Coin.find(coin_id).name %></td>
 						<td><%= total %></td>
 						<td><%= link_to icon('btc'), transactions_sell_path(coin_id) %></td>
 					</tr>

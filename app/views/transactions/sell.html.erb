@@ -1,27 +1,34 @@
-<%= form_for(@transaction, url: transactions_subtract_path) do |form| %>
-  <% if @transaction.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+<main class="main-center">
+  <section class="center-card">
+    <h3 class="mb-3">Vender moedas</h3>
 
-      <ul>
-      <% @transaction.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <%= form_for(@transaction, url: transactions_subtract_path) do |form| %>
+      <% if @transaction.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+          <ul>
+          <% @transaction.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :coin_id, @coin.name %>
-    <%= form.hidden_field :coin_id, value: @coin.id %>
-  </div>
+      <div class="field col-4">
+        <%= form.label :moeda %>
+        <p class="mb-1 small-uppercase"><%= @coin.name %></p>
+        <%= form.hidden_field :coin_id, value: @coin.id %>
+      </div>
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, :step => 0.01, max: @max %>
-  </div>
+      <div class="field col-4">
+        <%= form.label :quantidade %>
+        <%= form.number_field :quantity, :step => 0.01, max: @max, min: 0 %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit id: "submit-form" %>
-  </div>
-<% end %>
+      <div class="actions d-flex align-items-center justify-content-center col-4">
+        <%= form.submit "Vender", id: "submit-form", class: "btn btn-BB" %>
+      </div>
+    <% end %>
+  </section>
+</main>
