@@ -7,10 +7,10 @@
 	<br>
 
 
-	<% @wallet.each do |coin, total| %>
-		<%= coin %>
+	<% @wallet.each do |coin_id, total| %>
+		<%= Coin.find(coin_id).name %>
 		<%= total %>
-		<%= link_to "Vender", transactions_sell_path(coin, total) %>
+		<%= link_to "Vender", transactions_sell_path(coin_id) %>
 		<br>
 	<% end %>
 

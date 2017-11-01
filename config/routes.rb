@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/wallet' => 'home#wallet'
   get 'transactions/new' => 'transactions#new'
   post 'transactions/' => 'transactions#create'
-  get 'transactions/sell/:coin/:total' => 'transactions#sell', as: 'transactions/sell'
+  get 'transactions/sell/:coin_id/' => 'transactions#sell', as: 'transactions/sell'
   post 'transactions/subtract' => 'transactions#subtract_transaction'
 
   root to: "home#index"

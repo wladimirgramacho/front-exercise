@@ -5,15 +5,6 @@ class HomeController < ApplicationController
 	end
 
   def wallet
-    @transactions = Transaction.where(user: current_user)
-    coins = @transactions.map(&:coin).uniq
-    @wallet = {}
-
-    coins.each do |coin|
-      total = @transactions.select{ |t| t.coin == coin}.reduce(0){|sum, t| sum + t.quantity}
-      @wallet[coin.name] = total
-    end
-
-    @wallet = @wallet.sort_by{ |coin, total| coin}
+    @wallet = current_user.transactions.group(:coin_id).order("sum_quantity DESC").sum(:quantity)
   end
 end
