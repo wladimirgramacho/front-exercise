@@ -8,8 +8,8 @@
 	position: absolute;
 	z-index: 2;
 
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
+  -webkit-animation-duration: 6s;
+  animation-duration: 6s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 
@@ -21,13 +21,15 @@
 @-webkit-keyframes fadeOut {
   0% {opacity: 1;}
   40% {opacity: 1;}
-  100% {opacity: 0;}
+  80% {opacity: 0;}
+  100% {opacity: 0; z-index: 0;}
 }
 
 @keyframes fadeOut {
   0% {opacity: 1;}
   40% {opacity: 1;}
-  100% {opacity: 0;}
+  80% {opacity: 0;}
+  100% {opacity: 0; z-index: 0;}
 }
 
 .fade-out {
